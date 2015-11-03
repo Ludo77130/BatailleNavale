@@ -24,6 +24,8 @@ public class JoueurContreOrdinateur extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //premier commentaire
+        //pour test conflits
     }
 
 }
