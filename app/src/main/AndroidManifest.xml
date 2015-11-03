@@ -33,6 +33,16 @@
             android:label="@string/title_activity_joueur_contre_ordinateur"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".modele.JoueurContreJoueur"
+            android:label="@string/title_activity_joueur_contre_joueur"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".modele.Options"
+            android:label="@string/title_activity_options"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

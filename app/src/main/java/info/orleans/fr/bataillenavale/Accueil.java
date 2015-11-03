@@ -2,6 +2,7 @@ package info.orleans.fr.bataillenavale;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,8 +11,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import info.orleans.fr.bataillenavale.modele.JoueurContreJoueur;
+import info.orleans.fr.bataillenavale.modele.Options;
 
 public class Accueil extends AppCompatActivity {
+
+    Button boutonJoueurContreOrdinateur = null;
+    Button boutonJoueurContreJoueur = null;
+    Button boutonOptions = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +28,7 @@ public class Accueil extends AppCompatActivity {
         setContentView(R.layout.activity_accueil);
         setTitle(getResources().getString(R.string.title_accueil));
         ajouterToolbar();
+        ajouterBoutons();
     }
 
     @Override
@@ -65,4 +75,35 @@ public class Accueil extends AppCompatActivity {
             }
         });
     }
+
+    private void ajouterBoutons() {
+        // Bouton "Joueur contre ordinateur"
+        boutonJoueurContreOrdinateur = (Button) findViewById(R.id.bouton_joueur_contre_ordinateur);
+        boutonJoueurContreOrdinateur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent joueurContreOrdinateurIntent = new Intent(Accueil.this, JoueurContreOrdinateur.class);
+                startActivity(joueurContreOrdinateurIntent);
+            }
+        });
+        // Bouton "Joueur contre joueur"
+        boutonJoueurContreJoueur = (Button) findViewById(R.id.bouton_joueur_contre_joueur);
+        boutonJoueurContreJoueur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent joueurContreJoueurIntent = new Intent(Accueil.this, JoueurContreJoueur.class);
+                startActivity(joueurContreJoueurIntent);
+            }
+        });
+        // Bouton "Options"
+        boutonOptions = (Button) findViewById(R.id.bouton_options);
+        boutonOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent optionsIntent = new Intent(Accueil.this, Options.class);
+                startActivity(optionsIntent);
+            }
+        });
+    }
+
 }

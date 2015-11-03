@@ -6,4 +6,8 @@
     <string name="title_activity_inscription">Inscription</string>
     <string name="title_activity_joueur_contre_ordinateur">Mode joueur contre ordinateur</string>
     <string name="bouton_joueur_contre_ordinateur">Joueur contre ordinateur</string>
+    <string name="bouton_joueur_contre_joueur">Joueur contre joueur</string>
+    <string name="bouton_options">Options</string>
+    <string name="title_activity_joueur_contre_joueur">Mode joueur contre joueur</string>
+    <string name="title_activity_options">Options</string>
 </resources>
