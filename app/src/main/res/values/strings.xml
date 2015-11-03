@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BatailleNavale</string>
+    <string name="app_name">Bataille navale</string>
     <string name="action_settings">À propos</string>
     <string name="title_accueil">Menu d\'accueil</string>
     <string name="title_activity_connexion">Connexion</string>
