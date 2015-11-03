@@ -28,6 +28,11 @@
             android:label="@string/title_activity_inscription"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".JoueurContreOrdinateur"
+            android:label="@string/title_activity_joueur_contre_ordinateur"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
