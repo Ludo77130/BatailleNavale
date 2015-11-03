@@ -20,12 +20,4 @@
         android:layout_centerHorizontal="true"
         android:textSize="35dp"
         android:textIsSelectable="false" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/titre"
-        android:layout_marginTop="71dp"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>
