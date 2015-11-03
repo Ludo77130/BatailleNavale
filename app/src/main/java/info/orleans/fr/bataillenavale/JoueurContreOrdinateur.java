@@ -26,4 +26,6 @@ public class JoueurContreOrdinateur extends AppCompatActivity {
         });
     }
 
+    int i = 3;
+
 }
