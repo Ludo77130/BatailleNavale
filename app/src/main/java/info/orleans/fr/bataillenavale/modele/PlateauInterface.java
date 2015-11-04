@@ -5,4 +5,5 @@ package info.orleans.fr.bataillenavale.modele;
  */
 public interface PlateauInterface {
 
+
 }
