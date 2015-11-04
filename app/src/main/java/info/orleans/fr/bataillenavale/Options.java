@@ -1,4 +1,4 @@
-package info.orleans.fr.bataillenavale.modele;
+package info.orleans.fr.bataillenavale;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,15 +9,14 @@ import android.view.View;
 
 import info.orleans.fr.bataillenavale.R;
 
-public class JoueurContreJoueur extends AppCompatActivity {
+public class Options extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_joueur_contre_joueur);
+        setContentView(R.layout.activity_options);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
 }
