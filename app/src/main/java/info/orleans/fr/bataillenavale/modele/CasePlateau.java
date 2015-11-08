@@ -27,9 +27,9 @@ public class CasePlateau implements StockageInterface{
                 //pour le moment vie = 1, voir à rajouter un argument de mode
                 vie = 1;
                 break;
-            case MERTOUCHE:
-            case PIECETOUCHE:
-            case PIECECOULE:
+            case MER_TOUCHE:
+            case PIECE_TOUCHE:
+            case PIECE_COULE:
                 coule = true;
                 vie = -2;
                 break;
@@ -58,18 +58,18 @@ public class CasePlateau implements StockageInterface{
         if(coule) return !coule;
         switch(this.stock){
             case MER:
-                stock = Stockage.MERTOUCHE;
+                stock = Stockage.MER_TOUCHE;
                 vie--;
                 coule = true;
                 return coule;
             case PIECE:
-            case PIECETOUCHE:
+            case PIECE_TOUCHE:
                 vie--;
                 if(vie > 0) {
-                    stock = Stockage.PIECETOUCHE;
+                    stock = Stockage.PIECE_TOUCHE;
                 }
                 else {
-                    stock = Stockage.PIECECOULE;
+                    stock = Stockage.PIECE_COULE;
                     coule = true;
                 }
                 return true;
