@@ -26,7 +26,7 @@
             android:layout_marginRight="65dp"
             android:text="@string/bouton_joueur_contre_ordinateur"
             android:layout_weight="1"
-            android:backgroundTint="@color/aquaBlue"/>
+            android:backgroundTint="@color/paleBlue"/>
 
         <Button
             android:id="@+id/bouton_joueur_contre_joueur"
@@ -36,7 +36,7 @@
             android:layout_marginRight="65dp"
             android:text="@string/bouton_joueur_contre_joueur"
             android:layout_weight="1"
-            android:backgroundTint="@color/aquaBlue"/>
+            android:backgroundTint="@color/paleBlue"/>
 
         <Button
             android:id="@+id/bouton_options"
@@ -46,7 +46,7 @@
             android:layout_marginRight="65dp"
             android:text="@string/bouton_options"
             android:layout_weight="1"
-            android:backgroundTint="@color/aquaBlue"/>
+            android:backgroundTint="@color/paleBlue"/>
 
     </LinearLayout>
 
