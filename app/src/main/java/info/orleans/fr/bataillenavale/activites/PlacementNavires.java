@@ -1,5 +1,6 @@
 package info.orleans.fr.bataillenavale.activites;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class PlacementNavires extends AppCompatActivity {
     private Navire[] naviresEnnemi;
     private boolean[][] positionsNaviresJoueur;
     private boolean[][] positionsNaviresEnnemi;
+    private String difficulte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +43,23 @@ public class PlacementNavires extends AppCompatActivity {
         setContentView(R.layout.activity_placement_navires);
         setTitle("Placement des navires");
         Bundle extras = getIntent().getExtras();
-        String difficulte = extras.getString("difficulte");
+        difficulte = extras.getString("difficulte");
         boutonGenererAleatoirement = (Button) findViewById(R.id.bouton_generer_aleatoirement);
         boutonJouer = (Button) findViewById(R.id.bouton_jouer);
+        ajouterOnClickListener(boutonGenererAleatoirement);
+        ajouterOnClickListener(boutonJouer);
         grillePlacementNavires = (GridLayout) findViewById(R.id.grid_layout_placement_navires);
         naviresJoueur = genererNavires();
         positionsNaviresJoueur = placerNavires(naviresJoueur);
         imagesGrillePlacementNavires = new ImageView[TAILLE_GRILLE_JOUABLE][TAILLE_GRILLE_JOUABLE];
         dessinerGrille(grillePlacementNavires, imagesGrillePlacementNavires);
-        ajouterOnClickListener(boutonGenererAleatoirement);
-        ajouterOnClickListener(boutonJouer);
         if (difficulte.equals("facile") || difficulte.equals("difficile")) {
             naviresEnnemi = genererNavires();
             positionsNaviresEnnemi = placerNavires(naviresEnnemi);
         }
     }
 
-    private void ajouterOnClickListener(Button bouton) {
+    private void ajouterOnClickListener(final Button bouton) {
         switch (bouton.getId()) {
             case R.id.bouton_generer_aleatoirement:
                 bouton.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +70,21 @@ public class PlacementNavires extends AppCompatActivity {
                     }
                 });
                 break;
+            case R.id.bouton_jouer:
+                bouton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(PlacementNavires.this, Jeu.class);
+                        Bundle bundle = new Bundle();
+                        intent.putExtra("difficulte", difficulte);
+                        bundle.putSerializable("positionsNaviresJoueur", positionsNaviresJoueur);
+                        if (difficulte.equals("facile") || difficulte.equals("difficile"))
+                            bundle.putSerializable("positionsNaviresEnnemi",
+                                    positionsNaviresEnnemi);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
             default: return;
         }
     }
@@ -90,7 +107,7 @@ public class PlacementNavires extends AppCompatActivity {
         });
     }
 
-    private void dessinerGrille(final GridLayout gridLayout, final ImageView[][] imagesGrilles) {
+    private void dessinerGrille(final GridLayout gridLayout, final ImageView[][] imagesGrille) {
         final TextView[] ligneLettres, colonneNombres;
         ligneLettres = new TextView[TAILLE_GRILLE_JOUABLE];
         colonneNombres = new TextView[TAILLE_GRILLE_JOUABLE +1];
@@ -130,15 +147,15 @@ public class PlacementNavires extends AppCompatActivity {
                         width = gridLayout.getWidth();
                         params.height = height / (TAILLE_GRILLE_JOUABLE + 1);
                         params.width = width / (TAILLE_GRILLE_JOUABLE + 1);
-                        imagesGrilles[i][j] = new ImageView(PlacementNavires.this);
-                        imagesGrilles[i][j].setLayoutParams(params);
+                        imagesGrille[i][j] = new ImageView(PlacementNavires.this);
+                        imagesGrille[i][j].setLayoutParams(params);
                         if (!positionsNaviresJoueur[i][j])
-                            imagesGrilles[i][j].setBackgroundDrawable(
+                            imagesGrille[i][j].setBackgroundDrawable(
                                     getResources().getDrawable(R.drawable.eau));
                         else
-                            imagesGrilles[i][j].setBackgroundDrawable(
+                            imagesGrille[i][j].setBackgroundDrawable(
                                     getResources().getDrawable(R.drawable.navire));
-                        gridLayout.addView(imagesGrilles[i][j]);
+                        gridLayout.addView(imagesGrille[i][j]);
                     }
                 }
             }

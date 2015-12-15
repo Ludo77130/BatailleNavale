@@ -24,6 +24,10 @@
             android:name=".activites.PlacementNavires"
             android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".activites.Jeu"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>
