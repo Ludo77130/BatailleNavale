@@ -10,42 +10,32 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/paleBlue"
-    tools:context=".activites.Accueil">
+    tools:context=".activites.ChoixDifficulte">
 
     <TableLayout
         android:layout_width="@dimen/table_layout_width"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_gravity="center">
         <Button
-            android:id="@+id/bouton_joueur_contre_ordinateur"
+            android:id="@+id/bouton_facile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="@dimen/button_layout_margin"
             android:padding="@dimen/button_padding"
             android:background="@drawable/bouton_arrondi"
-            android:text="@string/bouton_joueur_contre_ordinateur_nom"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:text="@string/bouton_facile_nom" />
         <Button
-            android:id="@+id/bouton_joueur_contre_joueur"
+            android:id="@+id/bouton_difficile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="@dimen/button_layout_margin"
             android:padding="@dimen/button_padding"
             android:background="@drawable/bouton_arrondi"
-            android:text="@string/bouton_joueur_contre_joueur_nom"
-            android:textColor="@android:color/white" />
-        <Button
-            android:id="@+id/bouton_options"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/button_layout_margin"
-            android:padding="@dimen/button_padding"
-            android:background="@drawable/bouton_arrondi"
-            android:text="@string/bouton_options_nom"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:text="@string/bouton_difficile_nom" />
     </TableLayout>
 
 </LinearLayout>

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.orleans.fr.bataillenavale" >
+    package="info.orleans.fr.bataillenavale">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".Accueil"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name=".activites.Accueil"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,29 +18,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Connexion"
-            android:label="@string/title_activity_connexion"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:name=".activites.ChoixDifficulte"
+            android:screenOrientation="landscape" />
         <activity
-            android:name=".Inscription"
-            android:label="@string/title_activity_inscription"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".JoueurContreOrdinateur"
-            android:label="@string/title_activity_joueur_contre_ordinateur"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".JoueurContreJoueur"
-            android:label="@string/title_activity_joueur_contre_joueur"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".Options"
-            android:label="@string/title_activity_options"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name=".activites.PlacementNavires"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 
